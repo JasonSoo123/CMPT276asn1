@@ -97,6 +97,8 @@ function calculateScore() {
 
 function Results() {
   pushAnswers();
+  var main = document.getElementById('main');
+  main.style.display = 'none';
   var result = document.getElementById('result');
   result.style.display = 'block';
 }
@@ -109,6 +111,10 @@ function pushAnswers() {
   document.getElementById('answer4').textContent = "Your Answer: " + arr_answer[3].value;
   document.getElementById('answer5').textContent = "Your Answer: " + arr_answer[4].value;
   
+}
+
+function retryButton() {
+  location.reload();
 }
 
 // Show the first question initially
