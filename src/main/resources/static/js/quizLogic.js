@@ -56,11 +56,14 @@ function nextButton() {
 
 function submitButton() {
 
-    if (isAnswer() && curr_Question === totalQuestions) {
+    if (isAnswer()) {
 
       document.getElementById('Buttons').style.display = 'none';
       calculateScore();
-      Results();
+      if (arr_answer.length === totalQuestions){
+
+        Results();
+      }
 
     } else {
       alert('Please answer all questions before submitting.');
@@ -76,7 +79,7 @@ function calculateScore() {
 
     if (answer) {
       arr_answer.push(answer);
-      // Check if the selected option is correct (adjust values as needed)
+     
       if (answer.value === 'B' && index === 0) {
         score += 1;
       } else if (answer.value === 'C' && index === 1) {
