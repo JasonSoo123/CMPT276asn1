@@ -56,19 +56,21 @@ function nextButton() {
 
 function submitButton() {
 
-    if (isAnswer()) {
+  if (isAnswer()) {
 
+    calculateScore();
+    if (arr_answer.length >= totalQuestions){
       document.getElementById('Buttons').style.display = 'none';
-      calculateScore();
-      if (arr_answer.length === totalQuestions){
-
-        Results();
-      }
+      Results();
 
     } else {
       alert('Please answer all questions before submitting.');
     }
+
+  } else {
+    alert('Please answer all questions before submitting.');
   }
+}
 
 function calculateScore() {
   var questionContainers = document.querySelectorAll('.question-container');
