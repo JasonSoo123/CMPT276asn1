@@ -1,6 +1,8 @@
 var curr_Question = 1;
 var totalQuestions = document.querySelectorAll('.question-container').length;
 
+var arr_answer = [];
+
 function Questions(questionNumber) {
 
     var question = document.querySelectorAll('.question-container');
@@ -73,28 +75,40 @@ function calculateScore() {
     var answer = container.querySelector('input[name="q' + (index + 1) + '"]:checked');
 
     if (answer) {
+      arr_answer.push(answer);
       // Check if the selected option is correct (adjust values as needed)
-      if (answer.value === 'b' && index === 0) {
+      if (answer.value === 'B' && index === 0) {
         score += 1;
-      } else if (answer.value === 'c' && index === 1) {
+      } else if (answer.value === 'C' && index === 1) {
         score += 1;
-      } else if (answer.value === 'c' && index === 2) {
+      } else if (answer.value === 'C' && index === 2) {
         score += 1;
-      } else if (answer.value === 'd' && index === 3) {
+      } else if (answer.value === 'D' && index === 3) {
         score += 1;
-      } else if (answer.value === 'a' && index === 4) {
+      } else if (answer.value === 'A' && index === 4) {
         score += 1;
       }
     }
   });
 
   // Display the results
-  document.getElementById('score').textContent = score + "/" + totalQuestions;
+  document.getElementById('score').textContent = "You got: "+ score + "/" + totalQuestions;
 }
 
 function Results() {
+  pushAnswers();
   var result = document.getElementById('result');
   result.style.display = 'block';
+}
+
+function pushAnswers() {
+
+  document.getElementById('answer1').textContent = "Your Answer: " + arr_answer[0].value;
+  document.getElementById('answer2').textContent = "Your Answer: " + arr_answer[1].value;
+  document.getElementById('answer3').textContent = "Your Answer: " + arr_answer[2].value;
+  document.getElementById('answer4').textContent = "Your Answer: " + arr_answer[3].value;
+  document.getElementById('answer5').textContent = "Your Answer: " + arr_answer[4].value;
+  
 }
 
 // Show the first question initially
