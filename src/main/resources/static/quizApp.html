@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>asn1</title>
     <link rel="stylesheet" href="quizApp.css">
+    <script src="/js/quizLogic.js" defer></script>
 </head>
 <body class="bg">
 
@@ -12,42 +13,138 @@
         <h1>Interactive Quiz (Antarctica Edition)</h1>
 
         <body>
-            <div> 
-                <p class="text"> #. Question goes here</p>
-                <form class="options">
-                    <label>
-                        <input type="radio" name="answer" value="a"> A.
-                    </label>
-                    <br>
-                    <label>
-                        <input type="radio" name="answer" value="b"> B.
-                    </label>
-                    <br>
-                    <label>
-                        <input type="radio" name="answer" value="c"> C.
-                    </label>
-                    <br>
-                    <label>
-                        <input type="radio" name="answer" value="d"> D.
-                    </label>
-                </form>
-            </div>
+            <div id="quiz"> 
+        
+                <form id="quizForm">
+                    <div class="question-container">
 
-            <div class="buttons">
-                <button id="prevButton">Previous</button>
-                <button id="submitButton">Submit</button>
-                <button id="nextButton">Next</button>
+                        <form class="question" id="question1">
+                            <p>1. Question</p>
+                            <label>
+                                <input type="radio" name="q1" value="a"> A.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q1" value="b"> B.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q1" value="c"> C.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q1" value="d"> D.
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="question-container">
+
+                        <form class="question" id="question2">
+                            <p>2. Question</p>
+                            <label>
+                                <input type="radio" name="q2" value="a"> A.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q2" value="b"> B.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q2" value="c"> C.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q2" value="d"> D.
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="question-container">
+
+                        <form class="question" id="question3">
+                            <p>3. Question</p>
+                            <label>
+                                <input type="radio" name="q3" value="a"> A.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q3" value="b"> B.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q3" value="c"> C.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q3" value="d"> D.
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="question-container">
+
+                        <form class="question" id="question4">
+                            <p>4. Question</p>
+                            <label>
+                                <input type="radio" name="q4" value="a"> A.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q4" value="b"> B.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q4" value="c"> C.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q4" value="d"> D.
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="question-container">
+
+                        <form class="question" id="question5">
+                            <p>5. Question</p>
+                            <label>
+                                <input type="radio" name="q5" value="a"> A.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> B.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q5" value="c"> C.
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="q5" value="d"> D.
+                            </label>
+                        </form>
+                    </div>
+                </form>
+
+                <div class="buttons" id="Buttons">
+                    <button id="prevButton" onclick="previousButton()">Previous</button>
+                    <button id="submitButton" onclick="submitButton()">Submit</button>
+                    <button id="nextButton" onclick="nextButton()">Next</button>
+                </div>
             </div>
         </body>
     </main>
-    <div class="resultbox">
+    <div class="resultbox" id="result">
 
         <h1>Results</h1>
-
-        
-
+        <p id="score"></p>
 
     </div>
-    
+
+    <footer class="Notice">
+        
+        <p class="bottomText">PENGUINS!!!!</p>
+    </footer>
 </body>
 </html>
